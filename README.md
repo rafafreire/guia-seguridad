@@ -1,2 +1,35 @@
-# guia-seguridad
-Guia Seguridad
+# Portal de Seguridad ENS & Proveedores
+
+Aplicación web React + Vite + Tailwind CSS para gestionar la documentación de seguridad, proveedores, vulnerabilidades, inventario y anexos de la Guía de Seguridad (ENS v0.2).
+
+## Características Principales
+* **Dashboard Ejecutivo:** Métricas en tiempo real de proveedores, vulnerabilidades y estado del Anexo I.
+* **Gestión de Proveedores y Cierre:** Fichas interactivas, checklist de controles del Anexo A.1 y certificados de destrucción.
+* **Vulnerabilidades y SLA:** Seguimiento de parches, severidades (Crítica, Alta, Media, Baja) y plazos internos.
+* **Inventario TIC y Solicitudes (Anexo H):** Control de activos y aprobación de software en portátiles corporativos.
+* **GitLab y OpenShift RBAC:** Matriz nominal de accesos y control de logs.
+* **Generador de Anexos (A–H + Cierre):** Visor interactivo y exportación a PDF / impresión directa.
+* **Persistencia Local y Backup:** Almacenamiento automático en `localStorage` y opción de exportar/importar respaldos en JSON.
+
+---
+
+## Cómo desplegarlo en un servidor o entorno local
+
+### 1. Requisitos previos
+* [Node.js](https://nodejs.org/) (versión 18 o superior recomendada).
+
+### 2. Instalación local y desarrollo
+```bash
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo en http://localhost:5173
+npm run dev
+```
+
+### 3. Compilación para producción (para alojar en Nginx, Apache, Vercel, Netlify o Docker)
+```bash
+# Generar archivos estáticos en la carpeta dist/
+npm run build
+```
+Los archivos generados en `dist/` son puramente estáticos y se pueden servir directamente desde cualquier servidor web (como Nginx o Apache) o subir a plataformas Cloud (Vercel, Netlify, AWS S3, GitHub Pages).
